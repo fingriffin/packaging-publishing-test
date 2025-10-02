@@ -10,6 +10,7 @@ dependencies = [
     "pandas>=2.3.3",
     "scikit-learn>=1.7.2",
     "streamlit>=1.50.0",
+    "typer>=0.19.2",
 ]
 
 [dependency-groups]
@@ -18,3 +19,16 @@ dev = [
     "flake8>=7.3.0",
     "isort>=6.1.0",
 ]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cancer_prediction" ]
+
+[tool.uv]
+package = true
+
+[project.scripts]
+cancer-prediction = "cancer_prediction.cli:app"
